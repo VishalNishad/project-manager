@@ -77,7 +77,7 @@ const Task = ({ task, index }) => {
 
   const taskDeleteHandler = async () => {
     try {
-      await axios.delete(`http://localhost:5000/task/delete/${task._id}`);
+      await axios.delete(`https://mern-task-management.herokuapp.com/task/delete/${task._id}`);
       dispatch(removeTask(task._id));
     } catch (error) {
       console.log(error);
