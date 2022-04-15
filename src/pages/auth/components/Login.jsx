@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import InputField from "../../../components/InputField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../../components/Button";
 import axios from "axios";
 
 const Login = ({ setFormType }) => {
+  const navigate = useNavigate();
   const [user, setUser] = React.useState({
     username: "",
     password: "",
@@ -19,7 +20,7 @@ const Login = ({ setFormType }) => {
       );
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
-        window.location.reload();
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
