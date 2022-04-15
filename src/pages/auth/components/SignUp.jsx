@@ -17,7 +17,8 @@ const SignUp = ({ setFormType }) => {
         "https://mern-task-management.herokuapp.com/user/signup",
         user
       );
-      console.log(response.data);
+            setFormType("login");
+
     } catch (error) {
       console.log(error.message);
     }
