@@ -21,6 +21,7 @@ const Login = ({ setFormType }) => {
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         navigate("/");
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);
